@@ -40,7 +40,7 @@ This project provides financial analysis tools through a FastMCP server that can
 **Option 2: Manual start:**
 ```bash
 # Start the server
-python server.py --transport sse --host localhost --port 8000
+python server.py --transport sse --host localhost --port 8001
 
 # In another terminal, start the tunnel
 cloudflared tunnel run financial-analyst-tunnel
@@ -66,7 +66,7 @@ Once the tunnel is running, your financial analyst service will be available at:
 
 ## Troubleshooting
 
-1. **Tunnel not connecting:** Check if the server is running on port 8000
+1. **Tunnel not connecting:** Check if the server is running on port 8001
 2. **DNS issues:** Ensure your domain is properly configured in Cloudflare
 3. **Authentication errors:** Re-run `cloudflared tunnel login`
 

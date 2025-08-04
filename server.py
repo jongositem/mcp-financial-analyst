@@ -63,7 +63,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--transport", default="stdio", choices=["stdio", "sse"])
     parser.add_argument("--host", default="localhost")
-    parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument("--port", type=int, default=8001)
     parser.add_argument("--tunnel", action="store_true", help="Use Cloudflare tunnel")
 
     args = parser.parse_args()

@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 # Start the server in the background
 echo "Starting the server..."
-python server.py --transport sse --host localhost --port 8000 &
+python server.py --transport sse --host localhost --port 8001 &
 SERVER_PID=$!
 
 # Wait a moment for server to start
