@@ -1,0 +1,7 @@
+tunnel: financial-analyst-tunnel
+credentials-file: /Volumes/Data/my_project/py_venv/mcp/financial-analyst/.cloudflared/credentials.json
+
+ingress:
+  - hostname: financial-analyst.your-domain.com
+    service: http://localhost:8000
+  - service: http_status:404 
