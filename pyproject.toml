@@ -1,0 +1,20 @@
+[project]
+name = "financial-analyst"
+version = "0.1.0"
+description = "Financial analysis tools with FastMCP server"
+requires-python = ">=3.8"
+dependencies = [
+    "fastmcp",
+    "yfinance",
+    "matplotlib",
+    "pandas",
+    "numpy",
+    "requests",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [] 

@@ -32,12 +32,25 @@ This project provides financial analysis tools through a FastMCP server that can
 
 ### Starting the Service
 
-**Option 1: Use the start script (recommended):**
+**Option 1: Use uv (recommended):**
 ```bash
-./start_tunnel.sh
+# Install dependencies and start with uv
+./start_uv_tunnel.sh
 ```
 
-**Option 2: Manual start:**
+**Option 2: Manual uv start:**
+```bash
+# Install dependencies
+uv sync
+
+# Start the server
+uv run python server.py --transport sse --host localhost --port 8001
+
+# In another terminal, start the tunnel
+cloudflared tunnel run financial-analyst-tunnel
+```
+
+**Option 3: Traditional pip/venv:**
 ```bash
 # Start the server
 python server.py --transport sse --host localhost --port 8001
@@ -61,8 +74,10 @@ Once the tunnel is running, your financial analyst service will be available at:
 
 - `cloudflared.yml`: Cloudflare tunnel configuration
 - `server.py`: FastMCP server implementation
+- `pyproject.toml`: uv project configuration
 - `setup_tunnel.sh`: Automated setup script
-- `start_tunnel.sh`: Service startup script
+- `start_uv_tunnel.sh`: uv-based service startup script
+- `start_tunnel.sh`: Traditional pip/venv startup script
 
 ## Troubleshooting
 
